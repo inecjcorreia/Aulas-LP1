@@ -1,30 +1,25 @@
 
-
+var cor;
 function setup() 
 {
   createCanvas (windowWidth, windowHeight);
 
-background(360, 0, 0);
+cor = 0;
 }
 function draw() 
 {
-  noStroke();
+  if (mouseX > width/2) cor++;
+  else cor--;
+  if(cor>255) cor = 255;
+  if (cor<0) cor=0;
+  background(cor);
+  stroke (255, 0, 0);
+  line(width/2, 0, width/2, height);
 
-  ifif (mouseX>0 && mouseX<width/2 
-    && mouseY>0 && mouseY<height/2)
-    {
-      fill(360, 0, 0, 5);
-    }
-    
-   
-    {
-      noFill();
-    }
-    rect(0, 0, width/2, hieght/2);
 }
 
-{
-function windowResized() 
 
+function windowResized() 
+{
   resizeCanvas (windowWidth, windowHeight);
 }
